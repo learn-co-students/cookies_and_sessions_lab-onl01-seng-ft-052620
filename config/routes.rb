@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   resource :products
   resource :application
 
-  post '/' => 'products#add'
-
+  
   root 'products#index'
-
+  post '/' => 'products#add'
+  
 
 
 end
