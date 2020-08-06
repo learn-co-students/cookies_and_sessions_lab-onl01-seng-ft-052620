@@ -1,0 +1,17 @@
+<h1>Products in Cart: </h1>
+<ul>
+  <% if @products %>
+    <% products = @products %>
+  <% else %>
+    <% products = session[:cart] %>
+  <% end %>
+  <% products.each do |prod| %>
+    <li><%= prod %></li>
+  <% end %>
+</ul><br>
+
+<h2>Add to Cart: </h2>
+<%= form_tag(url: '/', method: 'post') do %>
+  <%= text_field_tag "product" %>
+  <%= submit_tag 'add to cart' %> 
+<% end %>
